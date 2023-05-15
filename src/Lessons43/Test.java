@@ -8,5 +8,6 @@ public class Test {
         Electrocar.Battery battery = new Electrocar.Battery(); // Логически сгрупировав классы Electrocar и Battery
         // И теперь при создание обьекта класса Battery понятно что он лежит в классе Electrocar
         // Этот синтаксис создания обьектов в Java очень распрастранён
+
     }
 }
