@@ -1,4 +1,4 @@
-package Lessons45;
+package Lessons45; // 46 и 47 Сериализация (часть 3). Transient, serialVersionUID.
 
 import java.io.Serializable;
 
