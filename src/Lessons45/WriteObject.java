@@ -7,19 +7,12 @@ public class WriteObject {
     public static void main(String[] args) throws IOException {
         Person[] people =
                 {new Person(1, "Bob" ),new Person(2,"Mike"),new Person(3,"Chibo")};
-
-        try {
-            FileOutputStream fos = new FileOutputStream("people.bin");
-            ObjectOutputStream oos = new ObjectOutputStream(fos);
-
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("people.bin"))){
+            // использован синтексис Трай вис ресорсис.Поэтому закрывать не надо.Поток акроется сам.
            oos.writeInt(people.length);
-
            for (Person person : people){
                oos.writeObject(person);
-
            }
-
-            oos.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
